@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Climate Conditions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <img src="Screenshot_from_2024-04-11_20-50-55-removebg-preview.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+            <form id="search-form" class="centered">
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button type="button" onclick="fetchAndDisplayWeather()">Search</button>
+                <div class="loader" id="loader"></div> <!-- Loading animation -->
+            </form>
+        </div>
+        <div class="user-nav">
+            <!-- User login navigation here -->
+            <a href="./userlogin.html">Login</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h5 class="title">Real Time Climate Checking</h5>
+        <div id="climate-info" class="card">
+            <!-- Climate information will be displayed here -->
+        </div>
+
+        <!-- Small cards for displaying climate details -->
+        <div class="climate-cards">
+            <div class="card" id="wind-condition" style="display: none;">
+                <h2>Wind</h2>
+                <p id="wind-info">N/A</p>
+            </div>
+            <div class="card" id="humidity-condition" style="display: none;">
+                <h2>Humidity</h2>
+                <p id="humidity-info">N/A</p>
+            </div>
+            <div class="card" id="pressure-condition" style="display: none;">
+                <h2>Atmospheric Pressure</h2>
+                <p id="pressure-info">N/A</p>
+            </div>
+            <div class="card" id="temperature-condition" style="display: none;">
+                <h2>Temperature</h2>
+                <p id="temperature-info">N/A</p>
+            </div>
+            <div class="card" id="weather-condition" style="display: none;">
+                <h2>Weather Condition</h2>
+                <p id="weather-condition-info">N/A</p>
+            </div>
+        </div>
+        <!-- Inside the <div class="container"> -->
+        <div id="loading" class="loading"></div>
+    </div>
+</body>
+</html>
