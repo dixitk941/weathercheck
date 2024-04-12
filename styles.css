@@ -8,209 +8,78 @@
 /* Body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: black; /* Set the background color to black */
+  color: #fff; /* Set text color to white */
 }
 
 /* Header styles */
 .header {
-  text-align: center; /* Center-align all content */
+  text-align: center;
   padding: 20px;
-  background-color: black; /* Change header background color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px; /* Rounded corners */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header img {
   width: 110px;
-  display: inline-block; /* Ensure the image behaves as an inline-block element */
-}
-
-.user-nav {
-  float: right; /* Float navigation to the right */
 }
 
 .user-nav a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  margin-left: 20px;
 }
-
-.user-nav a:hover {
-  color: #66fcf1;
-}
-
 
 /* Container styles */
 .container {
   max-width: 900px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 8px; /* Rounded corners */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .title {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #333;
 }
 
-/* Search bar styles */
-.search-bar {
-  margin-bottom: 20px;
-}
+/* Other styles for content */
 
-#search-form {
-  display: flex;
-  align-items: center;
-}
+/* Mobile styles */
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 10px;
+  }
 
-#city-input {
-  width: 200px;
-  padding: 12px;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  background-color: #f9f9f9;
-  color: #333;
-  margin-right: 10px;
-  transition: border-color 0.3s ease;
-}
+  .header img {
+    width: 80px;
+  }
 
-#city-input::placeholder {
-  color: #888;
-}
+  .user-nav {
+    display: none;
+  }
 
-#city-input:focus {
-  outline: none;
-  border-color: #66fcf1;
-}
+  .user-nav a {
+    margin-left: 10px;
+  }
 
-button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  background-color: #66fcf1;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  .container {
+    padding: 10px;
+    border-radius: 0;
+    max-width: 100%;
+  }
 
-button:hover {
-  background-color: #45a29e;
-}
-
-/* Climate card styles */
-.climate-cards {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  margin-bottom: 20px;
-}
-
-.card {
-  flex: 0 0 auto;
-  width: 120px;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  margin-right: 10px;
-}
-
-.weather-card-container {
-  display: none;
-}
-
-.weather-card {
-  background-color: #f8f9fa;
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  perspective: 1000px;
-}
-
-.weather-card:hover {
-  transform: rotateY(10deg) rotateX(10deg);
-}
-
-.weather-detail {
-  margin-bottom: 10px;
-}
-
-.weather-detail h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
-}
-
-.weather-detail p {
-  margin: 5px 0 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h2 {
-  font-size: 16px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.card p {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
-}
-
-/* Today's weather card */
-.climate-cards {
-  display: flex;
-  flex-wrap: nowrap; /* Prevent wrapping */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  margin-bottom: 20px;
-  width: calc(100% - 220px); /* Adjusted width to accommodate today's weather card */
-}
-
-.today-card {
-  flex: 0 0 auto; /* Maintain fixed size */
-  width: 200px;
-  margin-left: 10px; /* Add margin for spacing */
-}
-
-.today-card:hover {
-  transform: translateY(-5px);
-}
-
-.today-card h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.today-card p {
-  font-size: 16px;
-  color: #121212;
-  margin-bottom: 10px;
-}
-
-/* Loading animation styles */
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #66fcf1;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  position: absolute;
-  top: calc(50% - 20px);
-  left: calc(50% - 20px);
-  display: none;
+  .title {
+    font-size: 24px;
+  }
+}0px);  display: none;
 }alc(50% - 20px);  display: none;
 }
