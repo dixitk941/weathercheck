@@ -7,7 +7,13 @@
     <title>Real-Time Climate Conditions</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js" defer></script>
+    <style>
+        .animate__animated {
+            animation-duration: 1s;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,29 +52,25 @@
             <!-- Climate information will be displayed here -->
         </div>
 
-        <div class="row climate-cards">
-            <div class="card col" id="wind-condition" style="display: none;">
-                <h2 class="card-title">Wind</h2>
-                <p class="card-text" id="wind-info">N/A</p>
-            </div>
-            <div class="card col" id="humidity-condition" style="display: none;">
-                <h2 class="card-title">Humidity</h2>
-                <p class="card-text" id="humidity-info">N/A</p>
-            </div>
-            <div class="card col" id="pressure-condition" style="display: none;">
-                <h2 class="card-title">Atmospheric Pressure</h2>
-                <p class="card-text" id="pressure-info">N/A</p>
-            </div>
-            <div class="card col" id="temperature-condition" style="display: none;">
-                <h2 class="card-title">Temperature</h2>
-                <p class="card-text" id="temperature-info">N/A</p>
-            </div>
-            <div class="card col" id="weather-condition" style="display: none;">
-                <h2 class="card-title">Weather Condition</h2>
-                <p class="card-text" id="weather-condition-info">N/A</p>
-            </div>
+        <div id="climate-cards-container" class="row">
+            <!-- Small cards for displaying climate details will be dynamically added here -->
         </div>
     </div>
+
+    <script>
+        // Function to animate the cards
+        function animateCards() {
+            $(".card").each(function(index) {
+                $(this).addClass("animate__animated animate__fadeInUp");
+                $(this).css("animation-delay", `${index * 0.1}s`);
+            });
+        }
+
+        // Call the animation function on page load
+        $(document).ready(function() {
+            animateCards();
+        });
+    </script>
 </body>
 
 </html>
